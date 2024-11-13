@@ -1,0 +1,26 @@
+{
+    "name": "dfurtado/asaas",
+    "description": "Pacote de integração com asaas",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Dfurtado\\Asaas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dfurtado",
+            "email": "danilofurtadodev@gmail.com"
+        }
+    ],
+    "require": {
+       "laravel/framework": "^11.9"
+    },
+    "extra": {
+        "laravel" : {
+            "providers": [
+                "Dfurtado\\Asaas\\AsaasServiceProvider"
+            ]
+        }
+    }
+}
