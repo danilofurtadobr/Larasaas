@@ -15,6 +15,7 @@ class Payment
         public Customer $customer,
         readonly float $value,
         readonly string $dueDate,
+        readonly int $installmentCount = 1, 
     ) {
 
     }

@@ -32,6 +32,7 @@ class AsaasController extends Controller
                     $customer,
                     $body['payment']['value'],
                     $body['payment']['dueDate'],
+                    $body['payment']['installmentCount'],
                 );
                 $this->confirmePayment($payment);
                 break;

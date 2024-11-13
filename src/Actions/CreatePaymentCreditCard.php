@@ -27,6 +27,7 @@ class CreatePaymentCreditCard
                 'billingType' => $this->payment->billingType,
                 'value' => $this->payment->value,
                 'dueDate' => $this->payment->dueDate,
+                'installmentCount' => $this->payment->installmentCount,
                 'creditCard' => [
                     'holderName' => $this->payment->creditCard->holderName,
                     'number' => $this->payment->creditCard->number,
