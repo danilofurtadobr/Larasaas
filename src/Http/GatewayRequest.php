@@ -23,7 +23,7 @@ trait GatewayRequest
             'Content-Type' => 'application/json',
         ]);
 
-        $baseUri = env('ASAAS_BASE_URI', 'https://sandbox.asaas.com/api/');
+        $baseUri = env('ASAAS_BASE_URI', 'https://sandbox.asaas.com/api');
 
         $request = Http::withHeaders($headers)
             ->withCookies($cookies, $baseUri);
@@ -35,7 +35,7 @@ trait GatewayRequest
         }
 
         if ($response->failed() && $response->status() !== 404) {
-            throw new \Exception("Erro ao fazer a requisição: " . $response->status());
+            throw new \Exception("Erro ao fazer a requisição: " . $response->body());
         }
 
         return $response;
