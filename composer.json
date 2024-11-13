@@ -2,6 +2,7 @@
     "name": "dfurtado/asaas",
     "description": "Pacote de integração com asaas",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Dfurtado\\Asaas\\": "src/"
