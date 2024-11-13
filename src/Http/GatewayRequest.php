@@ -35,7 +35,12 @@ trait GatewayRequest
         }
 
         if ($response->failed() && $response->status() !== 404) {
-            throw new \Exception("Erro ao fazer a requisição: " . $response->body());
+            throw new \Exception(sprintf(
+                "Erro ao fazer a requisição: %s\nStatus Code: %d\nResponse Body: %s",
+                $response->reason(),
+                $response->status(),
+                $response->body()
+            ));
         }
 
         return $response;
