@@ -16,14 +16,14 @@ trait GatewayRequest
         array $data = [],
         array $cookies = []
     ): \Illuminate\Http\Client\Response {
-        $accessToken = env('ASAAS_ACCESS_TOKEN', 'default_access_token');
+        $accessToken = config('asaas.access_token', 'default_access_token');
 
         $headers = array_merge($headers, [
             'access_token' => $accessToken, 
             'Content-Type' => 'application/json',
         ]);
 
-        $baseUri = env('ASAAS_BASE_URI', 'https://sandbox.asaas.com/api');
+        $baseUri = config('asaas.base_uri', 'https://sandbox.asaas.com/api');
 
         $request = Http::withHeaders($headers)
             ->withCookies($cookies, $baseUri);
