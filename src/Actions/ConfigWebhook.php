@@ -17,18 +17,18 @@ class ConfigWebhook
 
     public function handle()
     {
-        $url = env('APP_URL') . '/webhook/asaas';
+        $url = config('app.url') . '/webhook/asaas';
         $this->execute(
             endpoint: self::API_POST_WEBHOOK,
             method: self::HTTP_METHOD_POST,
             data: [
-                'name' => 'Laravel Webhook ' . env('APP_NAME'),
+                'name' => 'Laravel Webhook ' . config('app.name'),
                 'url' => $url,
-                'email' => env('ASAAS_WEBHOOK_EMAIL'),
+                'email' => config('asaas.webhook_email'),
                 'enabled' => true,
                 'interrupted' => true,
                 'apiVersion' => 3,
-                'authToken' => 'Bearer ' . env('ASAAS_ACCESS_TOKEN'),
+                'authToken' => 'Bearer ' . config('asaas.access_token'),
                 'sendType' => 'SEQUENTIALLY',
                 'events' => [
                     'PAYMENT_CONFIRMED',
