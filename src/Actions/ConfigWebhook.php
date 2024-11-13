@@ -18,9 +18,6 @@ class ConfigWebhook
     public function handle()
     {
         $url = env('APP_URL') . '/webhook/asaas';
-        if(env('APP_ENV') === 'local') {
-            $url = 'https://www.exemplo.com/webhook/asaas';
-        }
         $this->execute(
             endpoint: self::API_POST_WEBHOOK,
             method: self::HTTP_METHOD_POST,
