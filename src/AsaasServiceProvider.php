@@ -14,7 +14,7 @@ class AsaasServiceProvider extends ServiceProvider
             Commands\ConfigAsaasWebhookCommand::class,
         ]);
 
-        Route::get('/webhook/asaas', [AsaasController::class, 'paymentsWebhook']);
+        Route::post('/webhook/asaas', [AsaasController::class, 'paymentsWebhook']);
     }
 
     public function register()
